@@ -6,6 +6,12 @@ const USER_LocalStorage = "currentUser",
       SHOWING_ClassName = "showing";
 
 
+function deleteName(event){
+  localStorage.removeItem(USER_LocalStorage);
+  location.reload(true);
+}
+
+
 function saveName(text){
   localStorage.setItem(USER_LocalStorage, text);
 }
@@ -34,12 +40,21 @@ function printGreeting(text){
   form.classList.remove(SHOWING_ClassName)
   greeting.classList.add(SHOWING_ClassName)
   greeting.innerText = ciaoTutti[randomNumber];
+    
+  // delete Button
+  const delBtn = document.createElement("button");
+  const span = document.createElement("span");
+  delBtn.innerText = "❌"
+  delBtn.addEventListener("click", deleteName);
+  greeting.appendChild(delBtn);
+
 }
 
 function loadName(){
   const currentUser = localStorage.getItem(USER_LocalStorage);
   if(currentUser === null){
     askForName();
+    
   } else {
     printGreeting(currentUser);
   }
