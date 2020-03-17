@@ -206,3 +206,7 @@ img{
   }
 }
 
+#disqus_thread{
+  position: absolute;
+  width: 50%;
+}
