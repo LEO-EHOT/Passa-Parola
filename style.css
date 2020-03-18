@@ -219,6 +219,7 @@ img{
     padding: 5px;
     font-size: 14px;
     line-height: 17px;
+    white-space: normal;
   }
 }
 
