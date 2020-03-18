@@ -1,8 +1,6 @@
 
 const dateContainer = document.querySelector(".js-date")
 
-
-
 function getDate(){
     const date = new Date();
     const year = date.getFullYear();
