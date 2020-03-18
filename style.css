@@ -143,6 +143,23 @@ img{
   word-break: nowrap;
 }
 
+.resetName{
+  background: #aaa69d;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  padding:0px;
+  position: relative;
+  left: 8px;
+  bottom: 3px;
+  opacity: 80%;
+  border: 1px solid #aaa69d;
+}
+
+.resetName:hover {
+  background: #ff793f;
+  border-color: #ff793f;
+  transition: all 0.4s ease 0s;
+}
 
 /* For Mobile Dispaly */
 @media screen and (max-width:800px){
@@ -196,7 +213,6 @@ img{
     position: absolute;
   }
   .quote-text{
-    /* display: inline-block; */
     background-color: hsla(0, 0%, 100%, 0.205);
     margin: auto;
     width: 260px;
@@ -206,13 +222,3 @@ img{
   }
 }
 
-/* .comment{
- 
-  bottom: 5%;
-  right: 10%;
-  width: 10%;
-}
-
-#disqus_thread{
-  width: 5%;
-} */

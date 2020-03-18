@@ -3,14 +3,18 @@ const form = document.querySelector(".js-form-name"),
       greeting = document.querySelector(".js-greeting");
 
 const USER_LocalStorage = "currentUser",
-      SHOWING_ClassName = "showing";
+      SHOWING_ClassName = "showing",
+      RESET_NAME = "resetName";
 
+const delBtn = document.createElement("button");
+const span = document.createElement("span");
+
+//  Set constant  //
 
 function deleteName(event){
   localStorage.removeItem(USER_LocalStorage);
   location.reload(true);
 }
-
 
 function saveName(text){
   localStorage.setItem(USER_LocalStorage, text);
@@ -37,17 +41,16 @@ function printGreeting(text){
     `안녕! ${text}`
   ]
   const randomNumber = Math.floor(Math.random()*ciaoTutti.length);                 // Array 의 length 를 자동으로 곱해 DettiGen 수정해도 숫자 자동 조정.
-  form.classList.remove(SHOWING_ClassName)
-  greeting.classList.add(SHOWING_ClassName)
+  form.classList.remove(SHOWING_ClassName);
+  greeting.classList.add(SHOWING_ClassName);
   greeting.innerText = ciaoTutti[randomNumber];
     
   // delete Button
-  const delBtn = document.createElement("button");
-  const span = document.createElement("span");
-  delBtn.innerText = "❌"
+  
+  delBtn.innerText = "✏️"
   delBtn.addEventListener("click", deleteName);
   greeting.appendChild(delBtn);
-
+  greeting.querySelector("button").classList.add("resetName");        // 왜 ClearBtn.queryseclector 로 하면 null 이 뜰까.
 }
 
 function loadName(){
