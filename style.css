@@ -140,7 +140,7 @@ img{
   width: auto;
   font-size: 25px;
   line-height: 30px;
-  word-break: nowrap;
+  white-space: nowrap;
 }
 
 .resetName{
