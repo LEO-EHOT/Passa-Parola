@@ -6,7 +6,7 @@ function getDate(){
     const year = date.getFullYear();
     const month = date.getMonth();
     const day = date.getDate();
-    dateContainer.innerText = `${year}.${month < 10 ? `0${month}` : month}.${day < 10 ? `0${day}` : day}`
+    dateContainer.innerText = `${year}.${month < 10 ? `0${month+1}` : month+1}.${day < 10 ? `0${day}` : day}`
 }
 
 function init(){
